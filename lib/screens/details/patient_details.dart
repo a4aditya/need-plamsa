@@ -7,12 +7,12 @@ import 'package:flutter_svg/svg.dart';
 
 import '../register.dart';
 
-class DonorDetails extends StatefulWidget {
+class PatientDetails extends StatefulWidget {
   @override
-  _DonorDetailsState createState() => _DonorDetailsState();
+  _PatientDetailsState createState() => _PatientDetailsState();
 }
 
-class _DonorDetailsState extends State<DonorDetails> {
+class _PatientDetailsState extends State<PatientDetails> {
   final int _numPages = 6;
 
   final PageController _pageController = PageController(initialPage: 0);
@@ -69,7 +69,7 @@ class _DonorDetailsState extends State<DonorDetails> {
                           });
                         },
                         children: <Widget>[
-                          //YESNO
+                          //Patients Name
                           Padding(
                             padding: EdgeInsets.all(40.0),
                             child: Column(
@@ -77,46 +77,7 @@ class _DonorDetailsState extends State<DonorDetails> {
                               children: <Widget>[
                                 SizedBox(height: 30.0),
                                 Text(
-                                  'Have you ever been tested positive for Covid-19?',
-                                  style: kBlackTitleStyle,
-                                ),
-                                SizedBox(height: 15.0),
-                                SizedBox(
-                                  height: 40,
-                                  width: 60,
-                                  child: TextButton(
-                                      style: ButtonStyle(
-                                          shape: MaterialStateProperty.all<
-                                                  RoundedRectangleBorder>(
-                                              RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          18.0),
-                                                  side: BorderSide(
-                                                      color: Colors.blue)))),
-                                      onPressed: () {
-                                        _pageController.nextPage(
-                                          duration: Duration(milliseconds: 500),
-                                          curve: Curves.ease,
-                                        );
-                                      },
-                                      child: Text(
-                                        "Yes",
-                                        style: TextStyle(fontSize: 18),
-                                      )),
-                                ),
-                              ],
-                            ),
-                          ),
-                          //Donor Name
-                          Padding(
-                            padding: EdgeInsets.all(40.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                SizedBox(height: 30.0),
-                                Text(
-                                  'Enter Your Full Name',
+                                  'Enter Patients Full Name',
                                   style: kBlackTitleStyle,
                                 ),
                                 SizedBox(height: 15.0),
@@ -125,7 +86,7 @@ class _DonorDetailsState extends State<DonorDetails> {
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(),
                                     labelText: 'Full Name',
-                                    hintText: 'Enter Your Name',
+                                    hintText: 'Enter Patients Name',
                                   ),
                                 ),
                                 SizedBox(height: 25.0),
@@ -273,6 +234,42 @@ class _DonorDetailsState extends State<DonorDetails> {
                               ],
                             ),
                           ),
+                          //Donor Email Address
+                          Padding(
+                            padding: EdgeInsets.all(40.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                SizedBox(height: 30.0),
+                                Text(
+                                  'Enter Hospital Location',
+                                  style: kBlackTitleStyle,
+                                ),
+                                SizedBox(height: 15.0),
+                                TextField(
+                                  cursorColor: Colors.black,
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    labelText: 'Hospital',
+                                    hintText: 'Hospital Location',
+                                  ),
+                                ),
+                                SizedBox(height: 25.0),
+                                Container(
+                                  alignment: Alignment.bottomRight,
+                                  child: FloatingActionButton(
+                                      onPressed: () {
+                                        _pageController.nextPage(
+                                          duration: Duration(milliseconds: 500),
+                                          curve: Curves.ease,
+                                        );
+                                      },
+                                      child: Icon(
+                                          Icons.keyboard_arrow_right_outlined)),
+                                )
+                              ],
+                            ),
+                          ),
                           //Donor Gender
                           Padding(
                             padding: EdgeInsets.all(40.0),
@@ -281,7 +278,7 @@ class _DonorDetailsState extends State<DonorDetails> {
                               children: <Widget>[
                                 SizedBox(height: 30.0),
                                 Text(
-                                  'Select Your Gender',
+                                  'Select Patient\'s Gender',
                                   style: kBlackTitleStyle,
                                 ),
                                 SizedBox(height: 15.0),
@@ -335,7 +332,7 @@ class _DonorDetailsState extends State<DonorDetails> {
                               children: <Widget>[
                                 SizedBox(height: 30.0),
                                 Text(
-                                  'Select Your Blood Group',
+                                  'Select Patient\'s Blood Group',
                                   style: kBlackTitleStyle,
                                 ),
                                 SizedBox(height: 15.0),
@@ -450,7 +447,7 @@ class _DonorDetailsState extends State<DonorDetails> {
                   child: Padding(
                     padding: EdgeInsets.only(bottom: 30.0),
                     child: Text(
-                      'Get started',
+                      'Submit',
                       style: TextStyle(
                         fontFamily: 'CM Sans Serif',
                         color: Color(0xFF5B16D0),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/details/donor_details.dart';
+import 'package:flutter_app/screens/details/patient_details.dart';
 import 'package:flutter_app/utilities/styles.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -29,12 +31,18 @@ class RegisterScreen extends StatelessWidget {
                     gradient: kPrimaryGradient,
                     borderRadius: BorderRadius.all(Radius.circular(12)),
                   ),
-                  child: Text(
-                    'Donor',
-                    style: Theme.of(context).textTheme.headline4.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'CM Sans Serif'),
+                  child: GestureDetector(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => DonorDetails()),
+                    ),
+                    child: Text(
+                      'Donor',
+                      style: Theme.of(context).textTheme.headline4.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'CM Sans Serif'),
+                    ),
                   ),
                 ),
                 Spacer(flex: 2),
@@ -55,12 +63,18 @@ class RegisterScreen extends StatelessWidget {
                       gradient: kPrimaryGradient2,
                       borderRadius: BorderRadius.all(Radius.circular(12)),
                     ),
-                    child: Text(
-                      'Patient',
-                      style: Theme.of(context).textTheme.headline4.copyWith(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'CM Sans Serif'),
+                    child: GestureDetector(
+                       onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PatientDetails()),
+                    ),
+                      child: Text(
+                        'Patient',
+                        style: Theme.of(context).textTheme.headline4.copyWith(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'CM Sans Serif'),
+                      ),
                     ),
                   ),
                 ),

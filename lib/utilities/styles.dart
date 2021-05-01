@@ -7,11 +7,31 @@ final kTitleStyle = TextStyle(
   height: 1.5,
 );
 
+final kBlackTitleStyle = TextStyle(
+  color: Colors.black,
+  fontFamily: 'CM Sans Serif',
+  fontSize: 26.0,
+  height: 1.5,
+);
+
 final kSubtitleStyle = TextStyle(
     color: Colors.white,
     fontFamily: 'CM Sans Serif',
     height: 1.2,
     fontSize: 18);
+
+final kBlackSubtitleStyle = TextStyle(
+    color: Colors.black,
+    fontFamily: 'CM Sans Serif',
+    height: 1.2,
+    fontSize: 18);
+
+final kBlueTextStyle = TextStyle(
+  color: Colors.blue,
+  fontFamily: 'CM Sans Serif',
+  height: 1.2,
+  fontSize: 18,
+);
 
 const kPrimaryGradient = LinearGradient(
   colors: [Color(0xFF46A0AE), Color(0xFF00FFCB)],
