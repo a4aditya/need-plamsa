@@ -167,7 +167,7 @@ class _DonorDetailsState extends State<DonorDetails> {
                                   ),
                                   onChanged: (String newValue) {
                                     setState(() {
-                                      genderValues = newValue;
+                                      cityValues = newValue;
                                     });
                                   },
                                   items: <String>[
